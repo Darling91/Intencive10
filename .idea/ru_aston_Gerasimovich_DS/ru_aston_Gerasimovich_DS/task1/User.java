@@ -2,7 +2,7 @@ package ru_aston_Gerasimovich_DS.task1;
 
 import java.util.Objects;
 
-public class User {
+public class User{
 
     private static final int MIN_AGE = 0;
     private static final int MAX_AGE = 150;

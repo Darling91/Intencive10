@@ -10,7 +10,7 @@ public class Car2 extends Rental {
     public double calculateDiscount() {
         double discount = super.calculateDiscount();
 
-        if(!get().isTwentyYearsOfDrivingCar()){
+        if(!getUser().isTwentyYearsOfDrivingCar()){
             discount = discount * 0.5;
         }else if(!getUser().isTwoYearsOfDrivingCar()){
             discount = discount * 0.3;

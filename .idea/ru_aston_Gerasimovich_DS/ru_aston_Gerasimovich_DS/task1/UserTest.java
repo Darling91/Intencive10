@@ -3,8 +3,10 @@ package ru_aston_Gerasimovich_DS.task1;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import ru_aston_Gerasimovich_DS.task1.User;
 
+import java.util.List;
+
+import static java.util.List.of;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
@@ -16,6 +18,23 @@ public class UserTest {
             true,
             false
     );
+
+    private List<Rental> initializeDemoServices() {
+        List<User> users = of(
+                new User(63, "Ivan", "Pupov",false, true),
+                new User(50, "Aleksandr", "Gulaev", false,true),
+                new User(21,"Danil","Sidorovich", true,false),
+                new User(23,"Dima","Gerasimovich", true,false),
+                new User(21,"Danil","Gulaev", false,false)
+        );
+        return of(
+                new Car1(2000, users.get(0),true),
+                new Car1(2000, users.get(1), true),
+                new Car1(2000, users.get(2), false),
+                new Car2(1000, users.get(3), false),
+                new Car2(1000, users.get(4), false)
+        );
+    }
 
     @Test
     void constructorInitialization() {
